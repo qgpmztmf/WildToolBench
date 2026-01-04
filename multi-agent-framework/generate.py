@@ -193,7 +193,8 @@ def pipeline(node_list, messages, tools, env_info, fetch_data_list, layer_num_to
             messages.append({"role": "user", "content": "切换角色为用户，继续提出新任务"})
         else:
             messages.append({"role": "user", "content": "Switch the role to user and continue to propose new tasks."})
-        user_handle = agent_handle_to_model["user"]
+        user_handle_list = agent_handle_to_model["user"]
+        user_handle = random.choice(user_handle_list)
         res, fetch_data = user_continue_question(messages, tools, env_info, user_handle.request_model, node_list[dialog_turns])
         part_ = [
             {"role": "assistant", "content": res}
@@ -307,7 +308,7 @@ if __name__ == "__main__":
         "--layer-num-total", type=int, default=4, help="The total number of levels in the path tree"
     )
     parser.add_argument(
-        "--user-model", type=list, default=["deepseek-chat"], help="Model used by the user agent"
+        "--user-model", type=str, default="deepseek-chat", nargs="+", help="Models used by the user agent"
     )
     parser.add_argument(
         "--planner-model", type=str, default="deepseek-chat", help="Model used by the planner agent"

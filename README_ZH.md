@@ -81,12 +81,12 @@ export LANGUAGE=zh
 cd multi-agent-framework
 
 python3 generate.py \
-    --layer_num_total 4 \
-    --user_model ["deepseek-chat"] \
-    --planner_model "deepseek-chat" \
-    --tool_model "deepseek-chat" \
-    --agent_model "deepseek-chat" \
-    --checker_model "deepseek-chat"
+    --layer-num-total 4 \
+    --user-model "deepseek-chat" \
+    --planner-model "deepseek-chat" \
+    --tool-model "deepseek-chat" \
+    --agent-model "deepseek-chat" \
+    --checker-model "deepseek-chat"
 ```
 特别的，我们保存了三种格式的数据，包括：原始生成数据、精简后的数据(删除checker message和角色切换 message)、各个智能体的抓取数据，以供需要的研究人员使用。
 

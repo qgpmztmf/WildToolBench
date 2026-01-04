@@ -92,12 +92,12 @@ The core innovation of this paper lies in the fact that our proposed WildToolBen
 cd multi-agent-framework
 
 python3 generate.py \
-    --layer_num_total 4 \
-    --user_model ["deepseek-chat"] \
-    --planner_model "deepseek-chat" \
-    --tool_model "deepseek-chat" \
-    --agent_model "deepseek-chat" \
-    --checker_model "deepseek-chat"
+    --layer-num-total 4 \
+    --user-model "deepseek-chat" \
+    --planner-model "deepseek-chat" \
+    --tool-model "deepseek-chat" \
+    --agent-model "deepseek-chat" \
+    --checker-model "deepseek-chat"
 ```
 In particular, we have preserved data in three formats, including: raw generated data, streamlined data (with checker messages and role-switch messages removed), and captured data from each agent, available for researchers in need.
 
