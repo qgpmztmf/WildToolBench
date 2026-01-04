@@ -88,8 +88,8 @@ def generate_results(args, model_name, test_cases_total):
                 future = executor.submit(
                     multi_threaded_inference,
                     handler,
-                    test_case,
-                    model_name
+                    model_name,
+                    test_case
                 )
                 futures.append(future)
 
@@ -102,7 +102,7 @@ def generate_results(args, model_name, test_cases_total):
                 pbar.update()
 
 
-def multi_threaded_inference(handler, test_case, model_name):
+def multi_threaded_inference(handler, model_name, test_case):
     retry_count = 0
 
     while True:
