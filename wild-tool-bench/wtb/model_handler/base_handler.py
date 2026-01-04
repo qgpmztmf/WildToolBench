@@ -257,13 +257,13 @@ class BaseHandler:
                 }
             }
 
-            if tool_calls is None:
-                if content is None:
+            if tool_calls is None or len(tool_calls) == 0:
+                if content is None or content == "":
                     action_name_label = "error"
                     inference_log[f"step_{step}"]["inference_output"].update(
                         {
                             "current_action_name_label": "error",
-                            "error_reason": f"tool_calls and content are None"
+                            "error_reason": f"tool_calls and content are None or empty"
                         }
                     )
                     break
