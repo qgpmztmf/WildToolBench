@@ -71,7 +71,7 @@ python3 -u -m wtb.openfunctions_evaluation --model=deepseek-chat
 Use the following code to evaluate the model's prediction results.
 
 ```bash
-cd wild-tool-bench/bench_test
+cd wild-tool-bench
 
 python3 -u -m wtb.eval_runner --model=deepseek-chat
 ```

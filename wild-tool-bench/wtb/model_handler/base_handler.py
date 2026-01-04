@@ -411,9 +411,14 @@ class BaseHandler:
                         if predict_function_name_list != answer_function_name_list:
                             continue
                         else:
-                            messages.append(
-                                {"role": "assistant", "content": content, "tool_calls": tool_calls}
-                            )
+                            if reasoning_content is not None:
+                                messages.append(
+                                    {"role": "assistant", "reasoning_content": reasoning_content, "content": content, "tool_calls": tool_calls}
+                                )
+                            else:
+                                messages.append(
+                                    {"role": "assistant", "content": content, "tool_calls": tool_calls}
+                                )
 
                             function_observation_list = tool_call_graph.step_to_function_observation_list[step][i]
                             if self.consecutive_tool_messages:

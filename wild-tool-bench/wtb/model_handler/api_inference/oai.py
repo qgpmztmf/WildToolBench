@@ -58,7 +58,7 @@ def main():
     from wtb.constant import DOTENV_PATH
     from dotenv import load_dotenv
     load_dotenv(dotenv_path=DOTENV_PATH, verbose=True, override=True)  # Load the .env file
-    handler = OpenAIHandler("xxx", 0.1)
+    handler = OpenAIHandler("gpt-4o-2024-11-20", 0.1)
     tools = [
         {
             "type": "function",
@@ -97,9 +97,9 @@ def main():
         "messages": messages,
         "tools": tools
     }
-    content, tool_calls = handler._request_tool_call(inference_data)
-    print(content)
-    print(json.dumps(tool_calls, ensure_ascii=False, indent=4))
+    api_response, latency = handler._request_tool_call(inference_data)
+    result = handler._parse_api_response(api_response)
+    print(json.dumps(result, ensure_ascii=False, indent=4))
 
 
 if __name__ == "__main__":

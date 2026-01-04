@@ -97,9 +97,9 @@ def main():
         "messages": messages,
         "tools": tools
     }
-    content, tool_calls = handler._request_tool_call(inference_data)
-    print(content)
-    print(json.dumps(tool_calls, ensure_ascii=False, indent=4))
+    api_response, latency = handler._request_tool_call(inference_data)
+    result = handler._parse_api_response(api_response)
+    print(json.dumps(result, ensure_ascii=False, indent=4))
 
 
 if __name__ == "__main__":

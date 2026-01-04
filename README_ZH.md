@@ -60,7 +60,7 @@ python3 -u -m wtb.openfunctions_evaluation --model=deepseek-chat
 使用以下代码对模型预测结果进行评估
 
 ```bash
-cd wild-tool-bench/bench_test
+cd wild-tool-bench
 
 python3 -u -m wtb.eval_runner --model=deepseek-chat
 ```
