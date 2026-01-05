@@ -51,11 +51,10 @@ pip install -r requirements.txt
 ### 🤖 API Models
 This project supports OpenAI-format API models.
 
-Taking deepseek-chat as an example, set the following key in the environment variables
+Taking deepseek-chat as an example, refer to .env.example, create a .env file, and set the following keys.
 
 ```bash
 DEEPSEEK_API_KEY=sk-XXXXXX
-
 ```
 
 Afterwards, use the following code to request model results.
@@ -80,11 +79,11 @@ python3 -u -m wtb.eval_runner --model=deepseek-chat
 
 ### ⚡️ Quickstart
 
-Taking the example where all agents use deepseek-chat as the base model, and generate data in English. First, set the following key in the environment variables.
+Taking the example where all agents use deepseek-chat as the base model, and generate data in English. First, refer to .env.example, create a .env file, and set the following keys.
 
 ```bash
-export DEEPSEEK_API_KEY=sk-XXXXXX
-export LANGUAGE=en
+DEEPSEEK_API_KEY=sk-XXXXXX
+LANGUAGE=en
 ```
 
 The core innovation of this paper lies in the fact that our proposed WildToolBench is capable of covering all possible action spaces for any number of tasks, and except for the first round, all are true multi-turn tasks. Therefore, our framework can support the generation of data for any number of tasks. Here we take the generation of four tasks as an example, with the reference code as follows:

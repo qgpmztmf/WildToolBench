@@ -43,7 +43,7 @@ pip install -r requirements.txt
 ### 🤖 API Models
 本项目支持 OpenAI 格式调用的 API 模型
 
-以 deepseek-chat 为例，在.env设置以下key
+以 deepseek-chat 为例，参考.env.example，创建一个.env文件，并设置以下key
 
 ```bash
 DEEPSEEK_API_KEY=sk-XXXXXX
@@ -69,11 +69,11 @@ python3 -u -m wtb.eval_runner --model=deepseek-chat
 
 ### ⚡️ Quickstart
 
-以所有智能体均使用 deepseek-chat 作为基座模型，并且生成中文的数据为例。首先，在环境变量中设置以下key
+以所有智能体均使用 deepseek-chat 作为基座模型，并且生成中文的数据为例。首先，参考.env.example，创建一个.env文件，并设置以下key
 
 ```bash
-export DEEPSEEK_API_KEY=sk-XXXXXX
-export LANGUAGE=zh
+DEEPSEEK_API_KEY=sk-XXXXXX
+LANGUAGE=zh
 ```
 
 本论文的核心创新点在于，我们提出的 WildToolBench 能够覆盖任意数量任务的所有可能的动作空间，并且除第一轮以外全部为真多轮任务，因此我们的框架能够支持生成任意数量任务的数据，此处我们以生成四个任务为例，参考如下代码：
