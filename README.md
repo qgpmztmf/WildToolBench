@@ -3,7 +3,8 @@
 
 <p align="center">
     📖 <a>English</a> •
-    <a href="README_ZH.md">中文</a>
+    <a href="README_ZH.md">中文</a> •
+    📚 <a href="https://openreview.net/forum?id=yz7fL5vfpn">ICLR 2026 Paper</a>
 </p>
 
 
